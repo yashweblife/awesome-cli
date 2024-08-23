@@ -62,7 +62,22 @@ async function createWebAppProjectOptions() {
             type: "list",
             message: "Framework: ",
             choices: ["React", "Vue", "Simple", "CLI", "VSCode Extension"]
-        }
+            
+        },
+        {
+            name: "Typescript",
+            type: "confirm",
+            message: "Typescript: ",
+            default: true,
+            transformer: (answer) => answer ? "👍" : "👎"
+        },
+        {
+            name: "versionControl",
+            type: "confirm",
+            message: "Git: ",
+            default: true,
+            transformer: (answer) => answer ? "👍" : "👎"
+        },
     ])
     return output.framework;
 }
